@@ -1,0 +1,163 @@
+openapi: 3.0.1
+info:
+  title: Task 2. Swagger codegen.
+  description: This is a simple Api
+  version: 1.0.0
+
+tags:
+  - name: Server
+paths:
+  /server/addServer:
+    put:
+      tags:
+        - Server
+      summary: Add a server object
+      operationId: addServerObject
+      requestBody:
+        description: Server object that needs to be added.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServerModel'
+        required: true
+      responses:
+        201:
+          description: Successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServerModel'
+        400:
+          description: Bad Request
+          content: { }
+      x-codegen-request-body-name: body
+  /server/deleteServer/{id}:
+    delete:
+      tags:
+        - Server
+      summary: Delete a Server Object By Id
+      description: Delete a Server Object By Id
+      operationId: deleteServerObject
+      parameters:
+        - name: id
+          in: path
+          description: Id of the server object desired to be retrieved
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Server Object Successfully Deleted
+          content:
+            application/json:
+              schema:
+                type: string
+                example: Server Object Successfully Deleted
+        400:
+          description: Bad request
+          content: { }
+        404:
+          description: Server Object with given id Not found
+          content: { }
+  /server/getServer:
+    get:
+      tags:
+        - Server
+      summary: Get all Server Objects
+      description: Get all Server Objects
+      operationId: getAllServerObjects
+      responses:
+        200:
+          description: Succesful retrieval of Server Object
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ServerModel'
+        400:
+          description: Bad request
+          content: { }
+  /server/getServer/byId/{id}:
+    get:
+      tags:
+        - Server
+      summary: Get a Single Server Object By Id
+      description: Get a Single Server Object By Id
+      operationId: getServerObjectById
+      parameters:
+        - name: id
+          in: path
+          description: Id of the server object desired to be retrieved
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Succesful retrieval of Server Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServerModel'
+        400:
+          description: Bad request
+          content: { }
+        404:
+          description: Server Object with given id Not found
+          content: { }
+  /server/getServer/byName/{name}:
+    get:
+      tags:
+        - Server
+      summary: Get a Single Server Object By Name
+      description: Get a Single Server Object By Name
+      operationId: getServerObjectByName
+      parameters:
+        - name: name
+          in: path
+          description: Name of the server object desired to be retrieved
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Succesful retrieval of Server Object
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ServerModel'
+        400:
+          description: Bad request
+          content: { }
+        404:
+          description: Server Object with given name Not found
+          content: { }
+components:
+  schemas:
+    ServerModel:
+      required:
+        - framework
+        - id
+        - language
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+          example: "123"
+        name:
+          type: string
+          example: my mentos
+        language:
+          type: string
+          example: java
+        framework:
+          type: string
+          example: python
+    ApiError:
+      properties:
+        errorMessage:
+          type: string
+
