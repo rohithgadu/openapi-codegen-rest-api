@@ -96,7 +96,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>
-                        com.example.demo.DemoApplication
+                        com.example.openapi.OpenApiApplication
                     </mainClass>
                     <excludes>
                         <exclude>
@@ -120,8 +120,8 @@
                                 ${project.basedir}/src/main/resources/api.yaml
                             </inputSpec>
                             <generatorName>spring</generatorName>
-                            <apiPackage>com.example.demo</apiPackage>
-                            <modelPackage>com.example.demo.model</modelPackage>
+                            <apiPackage>com.example.openapi</apiPackage>
+                            <modelPackage>com.example.openapi.model</modelPackage>
                             <configOptions>
                                 <delegatePattern>true</delegatePattern>
                             </configOptions>

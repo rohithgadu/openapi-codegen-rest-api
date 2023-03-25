@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.openapi.repository;
 
-import com.example.demo.model.ServerModel;
+import com.example.openapi.model.ServerModel;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
