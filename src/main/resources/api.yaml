@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Task 2. Swagger codegen.
-  description: This is a simple Api
+  description: This is a simple Api built using Open Api CodeGen
   version: 1.0.0
 
 tags:
@@ -156,8 +156,4 @@ components:
         framework:
           type: string
           example: python
-    ApiError:
-      properties:
-        errorMessage:
-          type: string
 

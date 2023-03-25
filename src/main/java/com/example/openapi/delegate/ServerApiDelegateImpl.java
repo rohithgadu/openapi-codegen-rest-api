@@ -1,9 +1,9 @@
-package com.example.demo.delegate;
+package com.example.openapi.delegate;
 
-import com.example.demo.ServerApiDelegate;
-import com.example.demo.error.ServerModelNotFoundException;
-import com.example.demo.model.ServerModel;
-import com.example.demo.repository.IServerModelRepository;
+import com.example.openapi.ServerApiDelegate;
+import com.example.openapi.error.ServerModelNotFoundException;
+import com.example.openapi.model.ServerModel;
+import com.example.openapi.repository.IServerModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

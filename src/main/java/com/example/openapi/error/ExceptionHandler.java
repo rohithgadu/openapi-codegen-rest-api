@@ -1,4 +1,4 @@
-package com.example.demo.error;
+package com.example.openapi.error;
 
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
