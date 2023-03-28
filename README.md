@@ -164,6 +164,6 @@ Record Successfully Deleted
 ```
 
 ## Screenshots
-
+### Swagger UI
 ![image](https://user-images.githubusercontent.com/84178107/228357280-15b4e5fd-130a-450e-8daa-274a26dd7ac8.png)
 
